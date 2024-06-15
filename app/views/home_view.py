@@ -12,15 +12,15 @@ class HomeView(tk.Frame):
         self.files_list()
 
     def create_widgets(self):
-        frame1 = tkinter.Frame(self, bg="red", width=100)
+        frame1 = tkinter.Frame(self, bg="#131415", width=100)
         frame1.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True)
 
-        frame_extension = tkinter.Frame(frame1, bg="orange", width=100)
+        frame_extension = tkinter.Frame(frame1, bg="#1F2936", width=100)
         frame_extension.pack(fill=tkinter.X)
         frame_extension.pack_propagate(False)  # Evita que el widget cambie su tamaño para ajustarse a sus hijos
         frame_extension.config(height=100)  # Establece el alto del widget
 
-        etiqueta = tkinter.Label(frame_extension, text="Extensión", bg="orange", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
+        etiqueta = tkinter.Label(frame_extension, text="Extensión", bg="#1F2936", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
         etiqueta.pack(padx=10, pady=10) # Margin en x,y
         self.seleccion = ttk.Combobox(frame_extension)
         self.seleccion.pack()
@@ -28,13 +28,13 @@ class HomeView(tk.Frame):
         self.entrada_extencion = tkinter.Entry(frame_extension)
         self.entrada_extencion.pack_forget()
 
-        etiqueta = tkinter.Label(frame1, text="La variable de numeración es: {num}", bg="red", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
+        etiqueta = tkinter.Label(frame1, text="La variable de numeración es: {num}", bg="#131415", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
         etiqueta.pack(padx=10, pady=10) # Margin en x,y
 
         self.seleccion_renameType = ttk.Combobox(frame1)
         self.seleccion_renameType.pack(padx=10, pady=10)
         
-        frame_nameInput = tkinter.Frame(frame1, bg="green", width=100)
+        frame_nameInput = tkinter.Frame(frame1, bg="#1F2936", width=100)
         frame_nameInput.pack(fill=tkinter.X)
         frame_nameInput.columnconfigure(0, weight=1)
         frame_nameInput.columnconfigure(1, weight=1)
@@ -47,7 +47,7 @@ class HomeView(tk.Frame):
         self.entrada_SustiName.grid(row=0, column=0, padx=10, pady=10)
         self.entrada_SustiName.grid_forget()
 
-        self.etiqueta_señal = tkinter.Label(frame_nameInput, text="-->", bg="green", fg="black", font=("Helvetica", 10, "bold"))
+        self.etiqueta_señal = tkinter.Label(frame_nameInput, text="-->", bg="#1F2936", fg="white", font=("Helvetica", 10, "bold"))
         self.etiqueta_señal.grid(row=0, column=1)
         self.etiqueta_señal.grid_forget()
 
@@ -59,10 +59,10 @@ class HomeView(tk.Frame):
         self.boton_rename.pack(padx=10, pady=10)
 
     def files_list(self):
-        frame2 = tkinter.Frame(self, bg="blue", width=200)
+        frame2 = tkinter.Frame(self, bg="#101826", width=200)
         frame2.pack(side=tkinter.LEFT, fill=tkinter.BOTH, expand=True)
 
-        etiqueta = tkinter.Label(frame2, text="Lista de archivos", bg="blue", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
+        etiqueta = tkinter.Label(frame2, text="Lista de archivos", bg="#101826", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
         etiqueta.pack(padx=10, pady=10) # ALGO SIMILAR A MARGIN
         self.lista_files = tkinter.Listbox(frame2, height=0)
         self.lista_files.pack()
