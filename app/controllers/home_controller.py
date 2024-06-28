@@ -3,9 +3,11 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 from tkinter import messagebox
+from utils.helpers import Helper
 
-class HomeController:
+class HomeController(Helper):
     def __init__(self, view):
+        super().__init__()
         self.view = view
         self.list_files = []
         self.new_list_files = []
@@ -93,9 +95,10 @@ class HomeController:
             self.view.lista_files.delete(0)
             extension = n.split('.')[-1]
             output_num = value.replace('{num}', f'{i:02d}')
-            self.view.lista_files.insert(tkinter.END, f'{output_num}.{extension}')
-            self.new_list_files.append(f'{output_num}.{extension}')
-    
+            output_casec = output_num.replace('{cased}', self.implement_casec())
+            self.view.lista_files.insert(tkinter.END, f'{output_casec}.{extension}')
+            self.new_list_files.append(f'{output_casec}.{extension}')
+
     def renamer_type(self, event):
         if self.view.seleccion_renameType.get() == "Renombrar":
             print("Renombrar")

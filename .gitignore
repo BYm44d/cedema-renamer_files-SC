@@ -1,3 +1,6 @@
-process.md
+PROCESS/process.md
+PROCESS/handbook.md
+PROCESS/img
+
 **/*.pyc
 .vscode/

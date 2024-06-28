@@ -28,7 +28,7 @@ class HomeView(tk.Frame):
         self.entrada_extencion = tkinter.Entry(frame_extension)
         self.entrada_extencion.pack_forget()
 
-        etiqueta = tkinter.Label(frame1, text="La variable de numeración es: {num}", bg="#131415", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
+        etiqueta = tkinter.Label(frame1, text="Las variables son: {num}, {cased}", bg="#131415", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
         etiqueta.pack(padx=10, pady=10) # Margin en x,y
 
         self.seleccion_renameType = ttk.Combobox(frame1)
@@ -64,7 +64,7 @@ class HomeView(tk.Frame):
 
         etiqueta = tkinter.Label(frame2, text="Lista de archivos", bg="#101826", fg="white", font=("Helvetica", 10, "bold")) # Crea una 
         etiqueta.pack(padx=10, pady=10) # ALGO SIMILAR A MARGIN
-        self.lista_files = tkinter.Listbox(frame2, height=0)
+        self.lista_files = tkinter.Listbox(frame2, height=0, width=50)
         self.lista_files.pack()
 
         self.boton_select = tkinter.Button(frame2, text="Seleccionar Carpeta")
